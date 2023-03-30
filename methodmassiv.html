@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="css/sass/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Методы массивов</title>
+  </head>
+  <body>
+    <a href="lessonLearn.html">Назад к уроку Массивы</a>
+
+    <h1>Методы массивов</h1>
+
+    <h2>Добавление/удаление элементов</h2>
+    <p>
+      Мы уже знаем методы, которые добавляют и удаляют элементы из начала и
+      конца:
+    </p>
+    <ul>
+      <li><span>arr.push(...items)</span> - добавляет элементы в конец.</li>
+      <li><span>arr.pop()</span> - извлекает элемент из конца.</li>
+      <li><span>arr.shift()</span> - извлекает элемент с начала.</li>
+      <li><span>arr.unshift(...items)</span> - добавляет эелемент в начало.</li>
+    </ul>
+    <details>
+      <summary>splice</summary>
+
+      <h3>Синтаксис</h3>
+      <ul>
+        <li>arr.splice(start[, deleteCount, elem1, ...,elemN])</li>
+      </ul>
+      <p>
+        Он изменяет arr начиная с индекса start: удаляет deleteCount элементов и
+        затем вставляет elem1, ..., elemN на их место.
+        <b>Возвращает массив из удалённых элементов</b>. Этот метод легко
+        понять, рассмотрев примеры. Начнём с удаления:
+      </p>
+      <p>
+        Метод splice также может вставлять элементы без удаления, для этого
+        достаточно установить deleteCount в 0:
+      </p>
+      <dl>
+        <dt>Отрицательные индексы разрешены</dt>
+        <dd>
+          В этом и в других методах массива допускается использование
+          отрицательных индексов. Они определяют позицию с конца массива:
+        </dd>
+      </dl>
+    </details>
+    <details>
+      <summary>slice</summary>
+      <p>Метод arr.slice намного проще, чем похожий на него arr.splice.</p>
+      <dl>
+        <dt>Синтаксис:</dt>
+        <dd><span>arr.slice([start], [end])</span></dd>
+      </dl>
+      <p>
+        Можно вызвать <b>slice</b> без аргументов: <b>arr.slice()</b> создаёт
+        копию arr. Это часто используют, чтобы создать копию массива для
+        дальнейших преобразований, которые не должны менять исходный массив.
+      </p>
+    </details>
+    <details>
+      <summary>concat</summary>
+      <p>
+        Метод arr.concat создаёт новый массив, в который копирует данные из
+        других массивов и дополнительные значения.
+      </p>
+      <dl>
+        <dt>Синтаксис:</dt>
+        <dd>arr.concat(arg1, arg2...)</dd>
+      </dl>
+      <p>
+        Он принимает любое количество аргументов, которые могут быть как
+        массивами, так и простыми значениями.<br />
+        <em
+          >В результате – новый массив, включающий в себя элементы из arr, затем
+          arg1, arg2 и так далее.</em
+        >
+      </p>
+    </details>
+    <details>
+      <summary>Перебор: forEach</summary>
+      <p>
+        Метод arr.forEach позволяет запускать функцию для каждого элемента
+        массива.
+      </p>
+      <dl>
+        <dt>Синтаксис</dt>
+        <dd>
+          arr.forEach(function(item, index, array) { // ... делать что-то с item
+          });
+        </dd>
+      </dl>
+    </details>
+
+    <details>
+      <summary>Поиск в массиве</summary>
+      <h3>indexOf/lastIndexOf и includes</h3>
+      <p>
+        У методов arr.indexOf и arr.includes одинаковый синтаксис и они делают
+        по сути то же самое, что и их строковые аналоги, но работают с
+        элементами вместо символов:
+      </p>
+
+      <i
+        ><span>arr.indexOf(item, from)</span> ищет item начиная с индекса from и
+        возвращает номер индекса, на котором был найден искомый элемент, в
+        противном случае -1. arr.includes(item, from) ищет item начиная с
+        индекса from и возвращает true, если поиск успешен.</i
+      >
+
+      <dl>
+        <dt>Например</dt>
+        <dd>
+          let arr = [1, 0, false];
+          <br />alert( arr.indexOf(0) ) ; // 1 <br />
+          alert( arr.indexOf(false) ); // 2 <br />alert( arr.indexOf(null) ); //
+          -1 <br />alert( arr.includes(1) ); // true
+        </dd>
+      </dl>
+      <h3>find и findIndex/findLastIndex</h3>
+      <p>
+        Представьте, что у нас есть массив объектов. Как нам найти объект с
+        определённым условием? <b>Здесь пригодится метод arr.find.</b>
+      </p>
+      <dl>
+        <dt>Синтаксис</dt>
+        <dd style="background-color: rgb(196, 194, 194)">
+          <span style="color: red"
+            >let result = arr.find(function(item, index, array)</span
+          >
+          { // если true - возвращается текущий элемент и перебор прерывается //
+          если все итерации оказались ложными, возвращается undefined });
+        </dd>
+      </dl>
+      <h3>filter</h3>
+      <p>
+        Метод find ищет один (первый) элемент, который заставит функцию вернуть
+        true. Если найденных элементов может быть много, можно использовать
+        arr.filter(fn). Синтаксис схож с find, но filter возвращает массив из
+        всех подходящих элементов:
+      </p>
+      <dl>
+        <dt>
+          Синтаксис схож с find, но filter возвращает массив из всех подходящих
+          элементов:
+        </dt>
+        <dd>
+          <span style="color: red"
+            >let results = arr.filter(function(item, index, array)</span
+          >
+          { // если `true` -- элемент добавляется к results и перебор
+          продолжается // возвращается пустой массив в случае, если ничего не
+          найдено });
+        </dd>
+      </dl>
+    </details>
+    <details>
+      <summary>Преобразование массива</summary>
+      <h3>map</h3>
+      <p>
+        Метод arr.map является одним из наиболее полезных и часто используемых.
+        Он вызывает функцию для каждого элемента массива и возвращает массив
+        результатов выполнения этой функции.
+      </p>
+      <dl>
+        <dt>Синтаксис</dt>
+        <dd style="background-color: rgb(196, 194, 194)">
+          <span style="color: red"
+            >let result = arr.map(function(item, index, array) </span
+          >{ // возвращается новое значение вместо элемента });
+        </dd>
+      </dl>
+    </details>
+    <div class="container">
+      <div class="box-1">
+        <div class="box-1_1"></div>
+      </div>
+      <div class="box-2"></div>
+    </div>
+    <div class="selOut">
+      <h3>Тут таблица</h3>
+    </div>
+    <div class="wrapper">
+      <div class="card">
+        <div class="card_img"></div>
+        <div class="card_content">
+          <h3>Заголовок</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
+            magni itaque molestiae assumenda voluptas reiciendis autem
+            similique! Labore architecto iste, consectetur odit quia excepturi
+            repudiandae culpa! Itaque illo libero iste!
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card_img"></div>
+        <div class="card_content">
+          <h3>Заголовок</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
+            magni itaque molestiae assumenda voluptas reiciendis autem
+            similique! Labore architecto iste, consectetur odit quia excepturi
+            repudiandae culpa! Itaque illo libero iste!
+          </p>
+        </div>
+      </div>
+      <div class="card card-1">
+        <div class="card_img"></div>
+        <div class="card_content">
+          <h3>Заголовок</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
+            magni itaque molestiae assumenda voluptas reiciendis autem
+            similique! Labore architecto iste, consectetur odit quia excepturi
+            repudiandae culpa! Itaque illo libero iste!
+          </p>
+        </div>
+      </div>
+    </div>
+    <fieldset>
+      <legend>Моя форма</legend>
+    </fieldset>
+    <button id="btn">Показать таблицу</button>
+    <button id="btn1">Спрятать таблицу</button>
+    <div class="content"></div>
+    <!-- <iframe src="lessonLearn.html" width="600" height="400"> </iframe>  -->
+
+    <!-- <script src="methodmassiv.js"></script> -->
+    <script src="map.js"></script>
+  </body>
+</html>
+-
