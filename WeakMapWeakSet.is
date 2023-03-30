@@ -1,0 +1,16 @@
+// Как мы знаем из главы Сборка мусора, движок JavaScript хранит значения в памяти до тех пор, пока они достижимы (то есть, эти значения могут быть использованы).
+let john = { name: "marsel" };
+
+let array = [john];
+
+let map = new Map();
+
+map.set(john, "...");
+john = null;
+
+let set = new Set(map.keys());
+john = null;
+
+console.log(set);
+console.log(array[0]);
+console.log(map);
