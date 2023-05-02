@@ -5,24 +5,157 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
       rel="shortcut icon"
       href="img/ico/favicon-32x32.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="css/fontawesome/css/all.css"/>
+    <link rel="stylesheet" href="css/fontawesome/css/all.css" />
     <link rel="stylesheet" href="css/fontawesome/css/brands.css" />
     <link rel="stylesheet" href="css/fontawesome/css/solid.css" />
-    <link rel="stylesheet" href="css/sass/style.css">
+    <link rel="stylesheet" href="css/sass/style.css" />
     <title>WeakMap WeakSet</title>
   </head>
   <body>
-    <h1>WeakMap</h1>
-
-    <i class="fa fa-anchor"></i>
-    <i class="fa fa-solid fa-comment"></i>
-    <i class="fa fa-address-book fa-2x"></i>
-    <i class="fa fa-solid fa-music fa-2x color_icon"></class></i>
-
-    <script src="css/fontawesome-free-6.4.0-web/js/v4-shims.js"></script>
+    <div class="container">
+      <header class="header">
+        <nav class="nav">
+          <div class="nav_item">
+            <ul>
+              <li><a href="#">Home1</a></li>
+              <li><a href="#">Test2</a></li>
+              <li><a href="#">Test3</a></li>
+              <li><a href="#">Test4</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <section>
+      <div class="container">
+        <h1 class="cont" id="cont">Content</h1>
+        <div class="row">
+          <div class="col-sm col-sm_js">
+            <p class="js">History</p>
+          </div>
+          <div class="col-sm">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+              quasi provident tenetur. Maiores explicabo sed quod consequuntur
+              quibusdam ipsum quis laudantium, saepe obcaecati nihil, laboriosam
+              beatae expedita officia suscipit quidem.
+            </p>
+          </div>
+          <div class="col-sm">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro,
+              in? Unde iusto saepe consequuntur. Maiores obcaecati
+              exercitationem sit facere, quidem recusandae, aspernatur illo
+              quaerat asperiores, nemo quod quisquam repellat perspiciatis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <form>
+          <fieldset>
+            <legend>My Calculator</legend>
+            <div class="row">
+              <div class="col">
+                <label for="nm1">Ведите первое число</label>
+                <input
+                  type="text"
+                  id="num1"
+                  name="nm1"
+                  class="form-control"
+                  placeholder="num1"
+                />
+              </div>
+              <div class="col">
+                <label for="operator">Введите оператор</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="operator"
+                  id="op"
+                  placeholder="operator"
+                />
+              </div>
+              <div class="col">
+                <label for="nm2">Ведите второе число</label>
+                <input
+                  type="text"
+                  name="nm2"
+                  id="num2"
+                  class="form-control"
+                  placeholder="num2"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="2"
+                  cols="20"
+                >
+Здесь результат</textarea
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn btn-danger btn1"
+                  onclick="myF()"
+                >
+                  Расчитать
+                </button>
+                <button type="reset" class="btn btn-danger">reset</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+    <section>
+      <div class="container table_container">
+        <div class="table" id="table">
+          <input type="text" name="text1" id="text1" value="1">
+          <input type="text" name="text2" id="text2" value="2">
+           <button  type="button" id="btn1" class="btn btn-danger">Поменять</button>
+           <div class="container">
+            <div class="box-flex" id="fl">
+              <div class="box1 box0">1</div>
+              <div class="box2 box0">2</div>
+              <div class="box3 box0">3</div>
+              <div class="box4 box0">4</div>
+              <div class="box5 box0">5</div>
+              <div class="box6 box0">6</div>
+            </div>
+          </div>
+           
+        </div><p>тут таблица</p>
+      </div>
+        <div class="newtable"></div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="box-flex" id="fl"></div>
+      </div>
+    </section>
+    <script src="/JS_Lesson/css/jquery.js"></script>
+    <script src="desctruct.js"></script>
+    <!-- <script src="/JS_Lesson/WeakMapWeakSet.is"></script> -->
   </body>
 </html>

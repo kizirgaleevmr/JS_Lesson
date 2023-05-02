@@ -1,0 +1,51 @@
+$color-box: #00ff00;
+$color-body: #dcdcdc;
+body {
+  background: rgb(189, 189, 189);
+}
+.section {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  background: $color-body;
+}
+.box {
+  position: relative;
+  z-index: 2;
+  width: 600px;
+  height: 60px;
+  margin: 0 auto;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.pixel {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: $color-box;
+}
+.pixel2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: $color-box;
+}
+.pixel3 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: $color-box;
+}
+
+.card {
+  position: absolute;
+  // margin-top: 120px;
+  float: left;
+  z-index: 3;
+  top: 120px;
+  left: 200px;
+  width: 300px;
+  height: 550px;
+  background: grey;
+  opacity: 0.5;
+}

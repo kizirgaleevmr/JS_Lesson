@@ -1,16 +1,91 @@
-// Как мы знаем из главы Сборка мусора, движок JavaScript хранит значения в памяти до тех пор, пока они достижимы (то есть, эти значения могут быть использованы).
-let john = { name: "marsel" };
+let paragraf = document.querySelector(".col-sm_js");
+let arr = ["HTML", "JavaScript", "CSS"];
+let examp = document.getElementById("exampleFormControlTextarea1");
+// Создать расширяемый калькулятор
 
-let array = [john];
+var num1 = document.getElementById("num1");
+var op = document.getElementById("op");
+var num2 = document.getElementById("num2");
 
-let map = new Map();
+let arr2 = Array.from(arr.sort());
+arr2.push("JS");
+// paragraf.insertAdjacentHTML("afterbegin", arr2);
 
-map.set(john, "...");
-john = null;
+var num1 = document.getElementById("num1");
+var op = document.getElementById("op");
+var num2 = document.getElementById("num2");
 
-let set = new Set(map.keys());
-john = null;
+const obj = {};
 
-console.log(set);
-console.log(array[0]);
-console.log(map);
+num1.onchange = function () {
+  obj.num1 = num1.value;
+};
+op.onchange = function () {
+  obj.op = op.value;
+};
+num2.onchange = function () {
+  obj.num2 = num2.value;
+};
+
+console.log(obj);
+var btn = document.querySelector(".btn1");
+
+let calc = new Calculator();
+
+function Calculator() {
+  this.method = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+  };
+
+  this.calculate = function (str) {
+    let split = str.split(" "),
+      a = +split[0],
+      op = split[1],
+      b = +split[2];
+
+    if (!this.method[op] || isNaN(a) || isNaN(b)) {
+      // paragraf.insertAdjacentHTML("afterbegin", "Проверьте данные!");
+      alert("Проверьте данные!!!");
+    }
+    return this.method[op](a, b);
+  };
+
+  this.addMethod = function (name, func) {
+    return (this.method[name] = func);
+  };
+}
+let powerCalc = new Calculator();
+
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+let myF = function () {
+  let str = `${obj.num1} ${obj.op} ${obj.num2}`;
+  console.log(str);
+  let res = powerCalc.calculate(str);
+  examp.textContent = "Ваш резальтат: " + res;
+  paragraf.insertAdjacentHTML(
+    "beforeend",
+    `${obj.num1} ${obj.op} ${obj.num2}` + " = " + res + "<br>"
+  );
+};
+
+let vasya = { name: "Вася", age: 25, job: true };
+let petya = { name: "Петя", age: 30, job: false };
+let masha = { name: "Маша", age: 29, job: false };
+let masha1 = { name: "Маша1", age: 33, job: true };
+
+let arr3 = [vasya, petya, masha, masha1];
+let sum = 0;
+let res = 0;
+arr3.forEach((el) => {
+  sum += el.age;
+});
+
+console.log(sum);
+res = sum / arr3.length;
+console.log(res);
+
+let tb = document.querySelector(".table");

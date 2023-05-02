@@ -152,24 +152,25 @@
 
 // console.log(str);
 
-// // reduce/reduceRight
-// // Когда нам нужно перебрать массив – мы можем использовать forEach, for или for..of.
-// // Когда нам нужно перебрать массив и вернуть данные для каждого элемента – мы можем использовать map.
+// reduce/reduceRight
+// Когда нам нужно перебрать массив – мы можем использовать forEach, for или for..of.
+// Когда нам нужно перебрать массив и вернуть данные для каждого элемента – мы можем использовать map.
 
-// // let value = arr.reduce(function(accumulator, item, index, array) {
-// //   // ...
-// // }, [initial]);
-// /*
+// let value = arr.reduce(function(accumulator, item, index, array) {
+//   // ...
+// }, [initial]);
+// // 
+
 // let arr = [1, 2, 3, 4, 5];
 
 // let result = arr.reduce((acc, item) => acc + item, 0);
 
 // alert(result); // 15
-// */
 
-// // Array.isArray
-// // Поэтому typeof не может отличить простой объект от массива:
-// // …Но массивы используются настолько часто, что для этого придумали специальный метод: Array.isArray(value). Он возвращает true, если value массив, и false, если нет.
+
+// Array.isArray
+// Поэтому typeof не может отличить простой объект от массива:
+// …Но массивы используются настолько часто, что для этого придумали специальный метод: Array.isArray(value). Он возвращает true, если value массив, и false, если нет.
 
 // document.write("<h3>Array.isArray</h3>");
 // document.write(Array.isArray({}) + "<br>"); // false
